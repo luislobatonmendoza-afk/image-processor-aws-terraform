@@ -33,3 +33,18 @@ output "private_subnet_ids" {
     aws_subnet.private_b.id
   ]
 }
+
+output "s3_bucket_name" {
+  description = "Nombre del bucket de imagenes"
+  value       = aws_s3_bucket.images.bucket
+}
+
+output "sqs_queue_url" {
+  description = "URL de la cola principal"
+  value       = aws_sqs_queue.image_queue.url
+}
+
+output "sqs_dlq_url" {
+  description = "URL de la Dead-Letter Queue"
+  value       = aws_sqs_queue.image_dlq.url
+}
