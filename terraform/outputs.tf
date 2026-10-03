@@ -48,3 +48,13 @@ output "sqs_dlq_url" {
   description = "URL de la Dead-Letter Queue"
   value       = aws_sqs_queue.image_dlq.url
 }
+
+output "s3_vpc_endpoint_id" {
+  description = "ID del VPC Endpoint de S3"
+  value       = aws_vpc_endpoint.s3.id
+}
+
+output "sqs_vpc_endpoint_id" {
+  description = "ID del VPC Endpoint de SQS"
+  value       = aws_vpc_endpoint.sqs.id
+}
