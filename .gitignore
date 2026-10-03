@@ -1,0 +1,17 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+
+# Variables locales
+*.tfvars
+.env
+
+# Lambda / Node
+node_modules/
+*.zip
+
+# macOS
+.DS_Store
