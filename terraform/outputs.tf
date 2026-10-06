@@ -58,3 +58,13 @@ output "sqs_vpc_endpoint_id" {
   description = "ID del VPC Endpoint de SQS"
   value       = aws_vpc_endpoint.sqs.id
 }
+
+output "upload_lambda_name" {
+  description = "Nombre de la Lambda de carga"
+  value       = aws_lambda_function.upload.function_name
+}
+
+output "crop_lambda_name" {
+  description = "Nombre de la Lambda de procesamiento"
+  value       = aws_lambda_function.crop.function_name
+}
