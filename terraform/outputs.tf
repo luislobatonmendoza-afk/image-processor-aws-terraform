@@ -68,3 +68,23 @@ output "crop_lambda_name" {
   description = "Nombre de la Lambda de procesamiento"
   value       = aws_lambda_function.crop.function_name
 }
+
+output "api_endpoint" {
+  description = "URL base del API Gateway"
+  value       = aws_apigatewayv2_api.http_api.api_endpoint
+}
+
+output "upload_endpoint" {
+  description = "Endpoint para cargar imagenes"
+  value       = "${aws_apigatewayv2_api.http_api.api_endpoint}/upload"
+}
+
+output "dlq_alarm_name" {
+  description = "Nombre de la alarma de CloudWatch para la DLQ"
+  value       = aws_cloudwatch_metric_alarm.dlq_messages.alarm_name
+}
+
+output "sns_dlq_topic_arn" {
+  description = "ARN del topic SNS usado para alertas de la DLQ"
+  value       = aws_sns_topic.dlq_alerts.arn
+}
